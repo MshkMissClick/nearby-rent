@@ -61,19 +61,33 @@
 
 ---
 
+## Требования
+| Инструмент | Минимальная версия | Проверка установки |
+|------------|--------------------|--------------------|
+|Java JDK | 17 |java -version |
+|Node.js | 18.x | node -v |
+|Docker | 20.10+ |docker --version| 
+|Docker Compose | 2.x (V2) |docker-compose --version |
+
 ## 🚀 Быстрый старт
-
-### Требования
-- Java 17+
-- Docker & Docker Compose
-- Node.js 18+ (для фронтенда)
-
-### Запуск через Docker Compose (разработка)
 
 ```bash
 # 1. Клонировать репозиторий
 git clone https://github.com/your-org/nearby-rent.git
 cd nearby-rent
 
-# 2. Запустить все сервисы
+# 2. Настройка окружения 
+Скопируйте пример файла конфигурации и при необходимости отредактируйте его (пароли БД, ключи API):
+cp .env.example .env
+
+# 3. Запустить все сервисы
 docker-compose up --build
+```
+🔗 Доступ к сервисам
+После успешного запуска проект будет доступен по следующим адресам:
+| Компонент | Адрес |
+|-----------|-------|
+| Frontend (UI) | http://localhost:3000 |
+| Backend API | http://localhost:8080 |
+| API Documentation (Swagger) | http://localhost:8080/swagger-ui.html |
+| Database (PostgreSQL) | localhost:5432 |
